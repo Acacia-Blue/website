@@ -264,9 +264,13 @@ img { max-width: 100%; display: block; }
 }
 .field textarea { resize: vertical; min-height: 120px; font-family: var(--body-font); }
 .field .helper { font-size: 11.5px; color: var(--ink-faint); }
-.form-status { margin: 14px 0 0; font-size: 13.5px; min-height: 1em; }
-.form-status-success { color: var(--navy); }
-.form-status-error { color: #a3382c; }
+.field-checkbox { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 22px; }
+.field-checkbox input[type="checkbox"] { width: 17px; height: 17px; margin-top: 2px; flex-shrink: 0; accent-color: var(--navy); }
+.field-checkbox label { font-size: 13.5px; color: var(--ink-soft); font-weight: 500; }
+.form-status { margin-top: 16px; font-family: var(--body-font); font-size: 14px; line-height: 1.5; }
+.form-status:empty { display: none; }
+.form-status-success { padding: 14px 16px; border-radius: 8px; background: rgba(200,154,60,0.12); border: 1px solid rgba(200,154,60,0.35); color: var(--navy); font-weight: 600; }
+.form-status-error { padding: 14px 16px; border-radius: 8px; background: rgba(163,56,44,0.08); border: 1px solid rgba(163,56,44,0.3); color: #a3382c; }
 @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } .field-row { grid-template-columns: 1fr; } }
 
 @media (max-width: 760px) {

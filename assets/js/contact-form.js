@@ -31,6 +31,7 @@
     if (form.org.value.trim()) fields.push({ name: 'company', value: form.org.value.trim() });
     if (form.segment.value) fields.push({ name: 'ab_client_segment', value: form.segment.value });
     if (form.urgency.value) fields.push({ name: 'ab_enquiry_urgency', value: form.urgency.value });
+    fields.push({ name: 'knowledge_hub_updates', value: form.knowledgeHubUpdates.checked ? 'true' : 'false' });
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
@@ -49,7 +50,7 @@
       .then(function (response) {
         if (!response.ok) throw new Error('Submission failed');
         form.reset();
-        setStatus("Thanks — we've received your message and will be in touch within two business days.", false);
+        setStatus("Thanks, we'll get back to you soon!", false);
       })
       .catch(function () {
         setStatus('Something went wrong sending your message. Please email us directly at hello@acaciablue.com.au instead.', true);
