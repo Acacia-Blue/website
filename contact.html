@@ -93,10 +93,7 @@
       </div>
 
       <div class="form-card">
-        <!-- This form has no backend wired up yet. Point the action attribute at a form
-             handling service (e.g. Formspree, Netlify Forms) or your own endpoint before
-             this site goes live. -->
-        <form action="#" method="post">
+        <form id="contactForm" data-hs-portal-id="443607835" data-hs-form-id="4764f420-8236-4e6d-bbb6-cf53f9435e5c">
           <div class="field-row">
             <div class="field">
               <label for="name">Your name</label>
@@ -111,20 +108,20 @@
             <div class="field">
               <label for="segment">Which best describes you?</label>
               <select id="segment" name="segment">
-                <option value="community-group">Community Group</option>
-                <option value="challenger-campaign">Independent Challenger Campaign</option>
-                <option value="sitting-member">Sitting Member</option>
-                <option value="third-party">Significant Third Party</option>
-                <option value="other">Other</option>
+                <option value="Not-for-profit / Community Organisation">Community Group</option>
+                <option value="Campaign">Independent Challenger Campaign</option>
+                <option value="Member of Parliament / Senator">Sitting Member</option>
+                <option value="Significant 3rd Party">Significant Third Party</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <div class="field">
               <label for="urgency">What's most pressing right now?</label>
               <select id="urgency" name="urgency">
-                <option value="upcoming-deadline">An upcoming deadline</option>
-                <option value="getting-started">Getting started</option>
-                <option value="general-enquiry">General enquiry</option>
-                <option value="not-sure">Not sure yet</option>
+                <option value="An upcoming deadline">An upcoming deadline</option>
+                <option value="Getting Started">Getting started</option>
+                <option value="General Enquiry">General enquiry</option>
+                <option value="Not sure yet">Not sure yet</option>
               </select>
             </div>
           </div>
@@ -140,6 +137,7 @@
             <span class="helper">The more context you can give, the faster we can point you the right way.</span>
           </div>
           <button class="btn btn-primary btn-lg" type="submit">Send message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -190,5 +188,6 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/contact-form.js"></script>
 </body>
 </html>

@@ -264,6 +264,9 @@ img { max-width: 100%; display: block; }
 }
 .field textarea { resize: vertical; min-height: 120px; font-family: var(--body-font); }
 .field .helper { font-size: 11.5px; color: var(--ink-faint); }
+.form-status { margin: 14px 0 0; font-size: 13.5px; min-height: 1em; }
+.form-status-success { color: var(--navy); }
+.form-status-error { color: #a3382c; }
 @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } .field-row { grid-template-columns: 1fr; } }
 
 @media (max-width: 760px) {
