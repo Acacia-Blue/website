@@ -236,6 +236,7 @@ img { max-width: 100%; display: block; }
 .site-footer { background: var(--navy); color: rgba(245,241,232,0.75); padding: 64px 0 28px; margin-top: 96px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(245,241,232,0.14); }
 .footer-grid p { font-size: 14px; line-height: 1.65; margin: 14px 0 0; max-width: 32ch; }
+.footer-legal { font-size: 12.5px; line-height: 1.6; color: rgba(245,241,232,0.5); margin: 12px 0 0; max-width: 40ch; }
 .footer-col h5 { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,232,0.5); margin: 0 0 16px; }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .footer-col a { color: rgba(245,241,232,0.85); text-decoration: none; font-size: 14px; }
