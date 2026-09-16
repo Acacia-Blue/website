@@ -225,10 +225,11 @@ img { max-width: 100%; display: block; }
 
 /* ---------- CTA band ---------- */
 .cta-band {
-  position: relative; background: var(--navy); overflow: hidden; border-radius: 16px;
+  position: relative; background: var(--navy); overflow: hidden;
+  width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
 }
 .cta-band .cb-watermark { position: absolute; right: -30px; bottom: -40px; height: 260px; opacity: 0.14; color: var(--paper); }
-.cta-band .cb-content { position: relative; z-index: 1; padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.cta-band .cb-content { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
 .cta-band h3 { font-family: var(--display); font-weight: 400; color: var(--paper); font-size: 28px; margin: 0 0 6px; }
 .cta-band p { color: rgba(245,241,232,0.75); margin: 0; font-size: 15px; }
 
