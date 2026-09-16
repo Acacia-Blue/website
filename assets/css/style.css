@@ -132,6 +132,7 @@ img { max-width: 100%; display: block; }
 .page-hero .ph-watermark { position: absolute; right: -24px; top: -36px; height: 260px; opacity: 0.12; color: var(--paper); }
 .page-hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 5vw, 46px); margin: 0 0 16px; color: var(--paper); }
 .page-hero .dek { font-size: 17px; line-height: 1.65; color: rgba(245,241,232,0.75); max-width: 62ch; margin: 0; }
+.page-hero .hero-actions { margin-top: 32px; }
 
 /* ---------- attribute chips ---------- */
 .attr-row { display: flex; flex-wrap: wrap; gap: 12px; }
