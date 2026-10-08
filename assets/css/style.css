@@ -385,3 +385,9 @@ img { max-width: 100%; display: block; }
 .tiers-table td:first-child { color: var(--navy); font-weight: 600; }
 .tiers-table tr:last-child td { border-bottom: none; }
 .table-note { font-size: 13.5px; line-height: 1.6; color: var(--ink-faint); margin: 20px 0 0; max-width: 70ch; }
+
+/* ---------- tailored retainer (services) ---------- */
+.fit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.fit-grid .pillar-card h3 { margin-bottom: 4px; }
+.fit-note { font-size: 14.5px; line-height: 1.6; color: var(--ink-faint); margin: 24px 0 0; max-width: 70ch; }
+@media (max-width: 760px) { .fit-grid { grid-template-columns: 1fr; } }
