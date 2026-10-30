@@ -391,3 +391,63 @@ img { max-width: 100%; display: block; }
 .fit-grid .pillar-card h3 { margin-bottom: 4px; }
 .fit-note { font-size: 14.5px; line-height: 1.6; color: var(--ink-faint); margin: 24px 0 0; max-width: 70ch; }
 @media (max-width: 760px) { .fit-grid { grid-template-columns: 1fr; } }
+
+/* ---------- NSW campaign finance service ---------- */
+.key-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; padding: 0; }
+.key-fact { display: inline-flex; align-items: baseline; gap: 10px; padding: 9px 18px; border: 1px solid rgba(245,241,232,0.28); border-radius: 100px; background: rgba(245,241,232,0.06); }
+.key-fact .kf-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,232,0.62); }
+.key-fact .kf-value { font-family: var(--display); font-size: 17px; color: var(--paper); }
+
+.offer-card { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 14px; padding: 36px 40px; box-shadow: var(--shadow); }
+.offer-price .op-amount { font-family: var(--display); font-size: 56px; line-height: 1; color: var(--navy); margin: 0; }
+.offer-price .op-gst { font-size: 14px; color: var(--ink-soft); margin: 8px 0 0; }
+.offer-price .op-tag { font-size: 13px; font-weight: 700; color: #A3762B; margin: 10px 0 0; }
+.offer-copy .oc-lede { font-family: var(--display); font-size: 20px; line-height: 1.45; color: var(--navy); margin: 0 0 12px; }
+.offer-copy p { font-size: 15.5px; line-height: 1.65; color: var(--ink-soft); margin: 0; }
+.offer-copy p.oc-lede { font-size: 20px; color: var(--navy); }
+@media (max-width: 760px) { .offer-card { grid-template-columns: 1fr; gap: 20px; padding: 28px 24px; } }
+
+.inc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.inc-card { background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 12px; padding: 32px 28px; box-shadow: var(--shadow); }
+.inc-card h3 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0 0 20px; color: var(--navy); }
+.inc-card h3 .inc-num { color: var(--gold); margin-right: 10px; }
+.inc-card h4 { font-size: 15px; font-weight: 600; color: var(--navy); margin: 0 0 6px; }
+.inc-card p { font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 20px; }
+.inc-card p:last-child { margin-bottom: 0; }
+.tool-chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tool-chips li { font-size: 12.5px; font-weight: 600; color: var(--ink-soft); background: rgba(126,151,166,0.2); border-radius: 100px; padding: 5px 12px; }
+@media (max-width: 900px) { .inc-grid { grid-template-columns: 1fr; } }
+
+.train-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.train-card { background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 12px; padding: 32px 30px; box-shadow: var(--shadow); }
+.train-card.wide { grid-column: 1 / -1; }
+.train-tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 100px; margin: 0 0 16px; background: #E2EAEE; color: #4F6E80; }
+.train-tag.spend { background: #F3E8D2; color: #A3762B; }
+.train-tag.donate { background: #E7ECE4; color: #5C7A5E; }
+.train-card h3 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0 0 8px; color: var(--navy); }
+.train-card .tc-lede { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; }
+.leaf-list.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
+.train-card.dark { background: var(--navy); border-color: transparent; padding: 0; overflow: hidden; display: grid; grid-template-columns: 1.5fr 1fr; }
+.train-card.dark .td-main { padding: 32px 30px; }
+.train-card.dark .td-side { background: var(--navy-deep); padding: 32px 28px; }
+.train-card.dark h3 { color: var(--paper); }
+.train-card.dark .tc-lede { color: rgba(245,241,232,0.75); }
+.train-card.dark .train-tag { background: rgba(200,154,60,0.18); color: var(--gold); }
+.train-card.dark .leaf-list li { color: rgba(245,241,232,0.88); }
+.fund-table { width: 100%; border-collapse: collapse; }
+.fund-table caption { text-align: left; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,232,0.55); padding-bottom: 12px; }
+.fund-table th, .fund-table td { padding: 10px 0; border-bottom: 1px solid rgba(245,241,232,0.16); font-size: 14.5px; font-weight: 400; text-align: left; color: var(--paper); }
+.fund-table td { text-align: right; }
+.fund-note { font-size: 12.5px; line-height: 1.6; color: rgba(245,241,232,0.62); margin: 14px 0 0; }
+@media (max-width: 900px) {
+  .train-grid { grid-template-columns: 1fr; }
+  .train-card.dark { grid-template-columns: 1fr; }
+  .leaf-list.two-col { grid-template-columns: 1fr; }
+}
+
+/* homepage announcement strip */
+.nsw-strip-section { padding: 48px 0; }
+.nsw-strip { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; background: var(--paper-raised); border: 1px solid var(--card-line); border-left: 4px solid var(--gold); border-radius: 12px; padding: 28px 32px; box-shadow: var(--shadow); }
+.nsw-strip .eyebrow { margin: 0 0 8px; }
+.nsw-strip h2 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0 0 6px; color: var(--navy); }
+.nsw-strip .ns-desc { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0; max-width: 62ch; }
