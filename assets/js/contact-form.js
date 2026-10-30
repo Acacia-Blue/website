@@ -28,6 +28,7 @@
       { name: 'email', value: form.email.value.trim() },
       { name: 'message', value: form.message.value.trim() }
     ];
+    if (form.phone.value.trim()) fields.push({ name: 'phone', value: form.phone.value.trim() });
     if (form.org.value.trim()) fields.push({ name: 'company', value: form.org.value.trim() });
     if (form.segment.value) fields.push({ name: 'ab_client_segment', value: form.segment.value });
     if (form.urgency.value) fields.push({ name: 'ab_enquiry_urgency', value: form.urgency.value });

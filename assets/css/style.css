@@ -121,6 +121,11 @@ img { max-width: 100%; display: block; }
   font-size: clamp(38px, 6vw, 58px); line-height: 1.06; margin: 0 0 24px; letter-spacing: -0.01em;
 }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+@media (max-width: 820px) {
+  .hero .hero-content { padding: 72px 20px 64px; }
+  .hero h1 { font-size: 34px; line-height: 1.12; margin-bottom: 20px; }
+  .hero .dek { font-size: 17px; margin-bottom: 28px; }
+}
 
 /* ---------- page hero (inner pages) ---------- */
 .page-hero {
@@ -361,3 +366,96 @@ img { max-width: 100%; display: block; }
   .profile-row { flex-direction: column; align-items: center; text-align: center; }
   .profile-info { max-width: 100%; }
 }
+
+/* ---------- segment links ---------- */
+.audience-link { display: inline-block; margin-top: 12px; font-size: 13.5px; font-weight: 700; color: var(--navy); text-decoration: none; }
+.audience-link:hover { text-decoration: underline; }
+.segment-links { text-align: center; margin: 48px 0 0; font-size: 15px; color: var(--ink-soft); }
+.segment-links a { color: var(--navy); font-weight: 700; text-decoration: none; }
+.segment-links a:hover { text-decoration: underline; }
+.leaf-list li a { color: var(--navy); font-weight: 700; text-decoration: none; }
+.leaf-list li a:hover { text-decoration: underline; }
+
+/* ---------- tiers table (third parties) ---------- */
+.table-wrap { overflow-x: auto; border: 1px solid var(--card-line); border-radius: 12px; background: var(--paper-raised); box-shadow: var(--shadow); }
+.tiers-table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.55; min-width: 640px; }
+.tiers-table th, .tiers-table td { text-align: left; vertical-align: top; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.tiers-table th { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+.tiers-table td { color: var(--ink-soft); }
+.tiers-table td:first-child { color: var(--navy); font-weight: 600; }
+.tiers-table tr:last-child td { border-bottom: none; }
+.table-note { font-size: 13.5px; line-height: 1.6; color: var(--ink-faint); margin: 20px 0 0; max-width: 70ch; }
+
+/* ---------- tailored retainer (services) ---------- */
+.fit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.fit-grid .pillar-card h3 { margin-bottom: 4px; }
+.fit-note { font-size: 14.5px; line-height: 1.6; color: var(--ink-faint); margin: 24px 0 0; max-width: 70ch; }
+@media (max-width: 760px) { .fit-grid { grid-template-columns: 1fr; } }
+
+/* ---------- brand guide status tokens (info only; used for notices and accent panels) ---------- */
+:root { --info: #4F6E80; --info-bg: #E2EAEE; }
+
+/* ---------- notice (brand guide "Notice": flat tint, 8px radius) ---------- */
+.notice-panel { background: var(--info-bg); border-radius: 8px; padding: 16px 20px; }
+.notice-panel p { margin: 0; font-size: 14.5px; line-height: 1.65; color: var(--ink); }
+.notice-panel strong { color: var(--navy); }
+
+/* ---------- accent panel (the Notice at section scale, with the card leaf motif at 13%) ---------- */
+.accent-section { padding: 48px 0; }
+.accent-panel { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; background: var(--info-bg); border-radius: 10px; padding: 28px 32px; }
+.accent-panel .ap-mark { position: absolute; right: -14px; top: -34px; height: 210px; color: var(--navy); opacity: 0.13; pointer-events: none; }
+.accent-panel .ap-body { position: relative; max-width: 64ch; }
+.accent-panel .ap-eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--info); margin: 0 0 8px; }
+.accent-panel h2, .accent-panel h3 { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.2; margin: 0 0 6px; color: var(--navy); }
+.accent-panel .ap-text { font-size: 15px; line-height: 1.6; color: var(--ink); margin: 0; }
+.accent-panel .ap-link { position: relative; font-size: 13.5px; font-weight: 700; color: var(--navy); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; margin-right: 72px; }
+@media (max-width: 760px) { .accent-panel { padding: 24px; } .accent-panel .ap-link { margin-right: 0; } }
+
+/* ---------- NSW campaign finance landing page ---------- */
+.key-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; padding: 0; }
+.key-fact { display: inline-flex; align-items: baseline; gap: 10px; padding: 9px 18px; border: 1px solid rgba(245,241,232,0.28); border-radius: 100px; background: rgba(245,241,232,0.06); }
+.key-fact .kf-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,232,0.62); }
+.key-fact .kf-value { font-family: var(--display); font-size: 17px; color: var(--paper); }
+
+.inc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.inc-card { background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 12px; padding: 32px 28px; box-shadow: var(--shadow); }
+.inc-card h3 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0 0 20px; color: var(--navy); }
+.inc-card h3 .inc-num { color: var(--gold); margin-right: 10px; }
+.inc-card h4 { font-size: 15px; font-weight: 600; color: var(--navy); margin: 0 0 6px; }
+.inc-card p { font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 20px; }
+.inc-card p:last-child { margin-bottom: 0; }
+.tool-chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tool-chips li { font-size: 12.5px; font-weight: 600; color: var(--ink-soft); background: rgba(126,151,166,0.2); border-radius: 100px; padding: 5px 12px; }
+@media (max-width: 900px) { .inc-grid { grid-template-columns: 1fr; } }
+
+.train-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.train-card { background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 12px; padding: 32px 30px; box-shadow: var(--shadow); }
+.train-card.wide { grid-column: 1 / -1; }
+.train-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gold); margin: 0 0 12px; }
+.train-card h3 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0 0 8px; color: var(--navy); }
+.train-card .tc-lede { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; }
+.leaf-list.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
+.train-card.dark { background: var(--navy); border-color: transparent; padding: 0; overflow: hidden; }
+.train-card.dark .td-main { padding: 32px 30px; }
+.train-card.dark h3 { color: var(--paper); }
+.train-card.dark .tc-lede { color: rgba(245,241,232,0.75); }
+.train-card.dark .leaf-list li { color: rgba(245,241,232,0.88); }
+.fund-note { font-size: 12.5px; line-height: 1.6; color: rgba(245,241,232,0.62); margin: 14px 0 0; }
+@media (max-width: 900px) {
+  .train-grid { grid-template-columns: 1fr; }
+  .leaf-list.two-col { grid-template-columns: 1fr; }
+}
+
+/* ---------- small fixes ---------- */
+.sec-head .eyebrow { font-size: 12px; line-height: 1.4; letter-spacing: 0.14em; color: var(--info); margin: 0 0 14px; }
+.cta-band .cb-content > div { flex: 1 1 340px; max-width: 64ch; }
+.section > .container > .eyebrow { color: var(--info); }
+
+/* ---------- election panels, form privacy line ---------- */
+.election-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 4px; }
+.election-row .accent-panel { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 16px; }
+.election-row .accent-panel .ap-link { margin-right: 0; }
+@media (max-width: 760px) { .election-row { grid-template-columns: 1fr; } }
+.form-privacy { font-size: 12.5px; line-height: 1.6; color: var(--ink-faint); margin: 0 0 18px; }
+.form-privacy a { color: var(--navy); font-weight: 600; }
+.election-row .accent-panel .ap-mark { height: 150px; right: -22px; top: -20px; }
