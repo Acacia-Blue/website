@@ -455,3 +455,4 @@ img { max-width: 100%; display: block; }
 /* ---------- small fixes ---------- */
 .sec-head .eyebrow { font-size: 12px; line-height: 1.4; letter-spacing: 0.14em; color: var(--info); margin: 0 0 14px; }
 .cta-band .cb-content > div { flex: 1 1 340px; max-width: 64ch; }
+.section > .container > .eyebrow { color: var(--info); }
