@@ -392,20 +392,30 @@ img { max-width: 100%; display: block; }
 .fit-note { font-size: 14.5px; line-height: 1.6; color: var(--ink-faint); margin: 24px 0 0; max-width: 70ch; }
 @media (max-width: 760px) { .fit-grid { grid-template-columns: 1fr; } }
 
-/* ---------- NSW campaign finance service ---------- */
+/* ---------- brand guide status tokens (info only; used for notices and accent panels) ---------- */
+:root { --info: #4F6E80; --info-bg: #E2EAEE; }
+
+/* ---------- notice (brand guide "Notice": flat tint, 8px radius) ---------- */
+.notice-panel { background: var(--info-bg); border-radius: 8px; padding: 16px 20px; }
+.notice-panel p { margin: 0; font-size: 14.5px; line-height: 1.65; color: var(--ink); }
+.notice-panel strong { color: var(--navy); }
+
+/* ---------- accent panel (the Notice at section scale, with the card leaf motif at 13%) ---------- */
+.accent-section { padding: 48px 0; }
+.accent-panel { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; background: var(--info-bg); border-radius: 10px; padding: 28px 32px; }
+.accent-panel .ap-mark { position: absolute; right: -14px; top: -34px; height: 210px; color: var(--navy); opacity: 0.13; pointer-events: none; }
+.accent-panel .ap-body { position: relative; max-width: 64ch; }
+.accent-panel .ap-eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--info); margin: 0 0 8px; }
+.accent-panel h2, .accent-panel h3 { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.2; margin: 0 0 6px; color: var(--navy); }
+.accent-panel .ap-text { font-size: 15px; line-height: 1.6; color: var(--ink); margin: 0; }
+.accent-panel .ap-link { position: relative; font-size: 13.5px; font-weight: 700; color: var(--navy); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; margin-right: 72px; }
+@media (max-width: 760px) { .accent-panel { padding: 24px; } .accent-panel .ap-link { margin-right: 0; } }
+
+/* ---------- NSW campaign finance landing page ---------- */
 .key-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; padding: 0; }
 .key-fact { display: inline-flex; align-items: baseline; gap: 10px; padding: 9px 18px; border: 1px solid rgba(245,241,232,0.28); border-radius: 100px; background: rgba(245,241,232,0.06); }
 .key-fact .kf-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,232,0.62); }
 .key-fact .kf-value { font-family: var(--display); font-size: 17px; color: var(--paper); }
-
-.offer-card { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 14px; padding: 36px 40px; box-shadow: var(--shadow); }
-.offer-price .op-amount { font-family: var(--display); font-size: 56px; line-height: 1; color: var(--navy); margin: 0; }
-.offer-price .op-gst { font-size: 14px; color: var(--ink-soft); margin: 8px 0 0; }
-.offer-price .op-tag { font-size: 13px; font-weight: 700; color: #A3762B; margin: 10px 0 0; }
-.offer-copy .oc-lede { font-family: var(--display); font-size: 20px; line-height: 1.45; color: var(--navy); margin: 0 0 12px; }
-.offer-copy p { font-size: 15.5px; line-height: 1.65; color: var(--ink-soft); margin: 0; }
-.offer-copy p.oc-lede { font-size: 20px; color: var(--navy); }
-@media (max-width: 760px) { .offer-card { grid-template-columns: 1fr; gap: 20px; padding: 28px 24px; } }
 
 .inc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .inc-card { background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 12px; padding: 32px 28px; box-shadow: var(--shadow); }
@@ -421,9 +431,7 @@ img { max-width: 100%; display: block; }
 .train-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .train-card { background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 12px; padding: 32px 30px; box-shadow: var(--shadow); }
 .train-card.wide { grid-column: 1 / -1; }
-.train-tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 100px; margin: 0 0 16px; background: #E2EAEE; color: #4F6E80; }
-.train-tag.spend { background: #F3E8D2; color: #A3762B; }
-.train-tag.donate { background: #E7ECE4; color: #5C7A5E; }
+.train-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--gold); margin: 0 0 12px; }
 .train-card h3 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0 0 8px; color: var(--navy); }
 .train-card .tc-lede { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; }
 .leaf-list.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
@@ -432,7 +440,6 @@ img { max-width: 100%; display: block; }
 .train-card.dark .td-side { background: var(--navy-deep); padding: 32px 28px; }
 .train-card.dark h3 { color: var(--paper); }
 .train-card.dark .tc-lede { color: rgba(245,241,232,0.75); }
-.train-card.dark .train-tag { background: rgba(200,154,60,0.18); color: var(--gold); }
 .train-card.dark .leaf-list li { color: rgba(245,241,232,0.88); }
 .fund-table { width: 100%; border-collapse: collapse; }
 .fund-table caption { text-align: left; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,232,0.55); padding-bottom: 12px; }
@@ -445,9 +452,6 @@ img { max-width: 100%; display: block; }
   .leaf-list.two-col { grid-template-columns: 1fr; }
 }
 
-/* homepage announcement strip */
-.nsw-strip-section { padding: 48px 0; }
-.nsw-strip { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; background: var(--paper-raised); border: 1px solid var(--card-line); border-left: 4px solid var(--gold); border-radius: 12px; padding: 28px 32px; box-shadow: var(--shadow); }
-.nsw-strip .eyebrow { margin: 0 0 8px; }
-.nsw-strip h2 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0 0 6px; color: var(--navy); }
-.nsw-strip .ns-desc { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0; max-width: 62ch; }
+/* ---------- small fixes ---------- */
+.sec-head .eyebrow { font-size: 12px; line-height: 1.4; letter-spacing: 0.14em; color: var(--info); margin: 0 0 14px; }
+.cta-band .cb-content > div { flex: 1 1 340px; max-width: 64ch; }
