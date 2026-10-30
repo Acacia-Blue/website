@@ -435,20 +435,14 @@ img { max-width: 100%; display: block; }
 .train-card h3 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0 0 8px; color: var(--navy); }
 .train-card .tc-lede { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; }
 .leaf-list.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
-.train-card.dark { background: var(--navy); border-color: transparent; padding: 0; overflow: hidden; display: grid; grid-template-columns: 1.5fr 1fr; }
+.train-card.dark { background: var(--navy); border-color: transparent; padding: 0; overflow: hidden; }
 .train-card.dark .td-main { padding: 32px 30px; }
-.train-card.dark .td-side { background: var(--navy-deep); padding: 32px 28px; }
 .train-card.dark h3 { color: var(--paper); }
 .train-card.dark .tc-lede { color: rgba(245,241,232,0.75); }
 .train-card.dark .leaf-list li { color: rgba(245,241,232,0.88); }
-.fund-table { width: 100%; border-collapse: collapse; }
-.fund-table caption { text-align: left; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,232,0.55); padding-bottom: 12px; }
-.fund-table th, .fund-table td { padding: 10px 0; border-bottom: 1px solid rgba(245,241,232,0.16); font-size: 14.5px; font-weight: 400; text-align: left; color: var(--paper); }
-.fund-table td { text-align: right; }
 .fund-note { font-size: 12.5px; line-height: 1.6; color: rgba(245,241,232,0.62); margin: 14px 0 0; }
 @media (max-width: 900px) {
   .train-grid { grid-template-columns: 1fr; }
-  .train-card.dark { grid-template-columns: 1fr; }
   .leaf-list.two-col { grid-template-columns: 1fr; }
 }
 
@@ -456,3 +450,12 @@ img { max-width: 100%; display: block; }
 .sec-head .eyebrow { font-size: 12px; line-height: 1.4; letter-spacing: 0.14em; color: var(--info); margin: 0 0 14px; }
 .cta-band .cb-content > div { flex: 1 1 340px; max-width: 64ch; }
 .section > .container > .eyebrow { color: var(--info); }
+
+/* ---------- election panels, form privacy line ---------- */
+.election-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 4px; }
+.election-row .accent-panel { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 16px; }
+.election-row .accent-panel .ap-link { margin-right: 0; }
+@media (max-width: 760px) { .election-row { grid-template-columns: 1fr; } }
+.form-privacy { font-size: 12.5px; line-height: 1.6; color: var(--ink-faint); margin: 0 0 18px; }
+.form-privacy a { color: var(--navy); font-weight: 600; }
+.election-row .accent-panel .ap-mark { height: 150px; right: -22px; top: -20px; }
