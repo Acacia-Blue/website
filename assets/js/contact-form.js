@@ -2,8 +2,9 @@
   var form = document.getElementById('contactForm');
   if (!form) return;
 
-  // Prefill from links such as contact.html?topic=knowledge-hub
-  if (/[?&]topic=knowledge-hub(&|$)/.test(window.location.search) && !form.message.value) {
+  // Links such as contact.html?topic=knowledge-hub are Knowledge Hub access requests
+  var requestingHubAccess = /[?&]topic=knowledge-hub(&|$)/.test(window.location.search);
+  if (requestingHubAccess && !form.message.value) {
     form.message.value = "I'd like to request access to the Knowledge Hub.";
   }
 
@@ -38,6 +39,8 @@
     if (form.segment.value) fields.push({ name: 'ab_client_segment', value: form.segment.value });
     if (form.urgency.value) fields.push({ name: 'ab_enquiry_urgency', value: form.urgency.value });
     fields.push({ name: 'knowledge_hub_updates', value: form.knowledgeHubUpdates.checked ? 'true' : 'false' });
+    // Hidden field on the HubSpot form; only sent for access requests so ordinary enquiries leave it untouched
+    if (requestingHubAccess) fields.push({ name: 'knowledge_hub_access', value: 'Requested' });
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
