@@ -2,6 +2,11 @@
   var form = document.getElementById('contactForm');
   if (!form) return;
 
+  // Prefill from links such as contact.html?topic=knowledge-hub
+  if (/[?&]topic=knowledge-hub(&|$)/.test(window.location.search) && !form.message.value) {
+    form.message.value = "I'd like to request access to the Knowledge Hub.";
+  }
+
   var status = document.getElementById('formStatus');
   var submitBtn = form.querySelector('button[type="submit"]');
   var portalId = form.getAttribute('data-hs-portal-id');
