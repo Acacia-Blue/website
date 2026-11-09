@@ -240,7 +240,7 @@ img { max-width: 100%; display: block; }
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--navy); color: rgba(245,241,232,0.75); padding: 64px 0 28px; margin-top: 96px; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(245,241,232,0.14); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(245,241,232,0.14); }
 .footer-grid p { font-size: 14px; line-height: 1.65; margin: 14px 0 0; max-width: 32ch; }
 .footer-col h5 { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,232,0.5); margin: 0 0 16px; }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
@@ -459,3 +459,48 @@ img { max-width: 100%; display: block; }
 .form-privacy { font-size: 12.5px; line-height: 1.6; color: var(--ink-faint); margin: 0 0 18px; }
 .form-privacy a { color: var(--navy); font-weight: 600; }
 .election-row .accent-panel .ap-mark { height: 150px; right: -22px; top: -20px; }
+
+
+/* ---------- events page ---------- */
+.events-list { display: flex; flex-direction: column; gap: 22px; }
+.events-status { color: var(--ink-faint); font-size: 15px; margin: 0; }
+.events-demo-note {
+  background: #E2EAEE; color: #4F6E80; border-radius: 8px; padding: 12px 16px;
+  font-size: 13.5px; font-weight: 600; margin: 0 0 28px;
+}
+.event-card {
+  display: grid; grid-template-columns: 88px 1fr; gap: 28px; align-items: start;
+  background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 12px;
+  padding: 28px; box-shadow: var(--shadow);
+}
+.event-card.has-image { grid-template-columns: 88px 1fr 360px; }
+.event-date {
+  display: flex; flex-direction: column; align-items: center; padding: 12px 0 14px;
+  border-radius: 10px; background: var(--navy); color: var(--paper); text-align: center;
+}
+.event-date .ed-month { font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+.event-date .ed-day { font-family: var(--display); font-size: 34px; line-height: 1.1; }
+.event-date .ed-weekday { font-size: 12px; color: rgba(245,241,232,0.7); }
+.event-name { font-family: var(--display); font-weight: 400; font-size: 24px; line-height: 1.25; margin: 0 0 6px; color: var(--navy); }
+.event-meta { font-size: 14px; color: var(--ink-faint); margin: 0 0 12px; white-space: pre-wrap; }
+.event-summary { font-size: 15px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 18px; max-width: 64ch; }
+.event-foot { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 18px; }
+.event-price { font-size: 14px; font-weight: 600; color: var(--navy); }
+.event-more { font-size: 13px; color: var(--ink-faint); }
+.event-badge { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; background: #F3E8D2; color: #A3762B; }
+/* Humanitix event images are 2:1; keep that shape so nothing is cropped. */
+.event-image { width: 100%; aspect-ratio: 2/1; object-fit: cover; border-radius: 8px; border: 1px solid var(--card-line); background: var(--paper); }
+.events-empty { max-width: 62ch; }
+.events-empty h2 { font-weight: 400; font-size: 26px; margin: 0 0 10px; }
+.events-empty p { font-size: 16px; line-height: 1.65; color: var(--ink-soft); margin: 0; }
+.events-empty a { color: var(--navy); font-weight: 600; }
+@media (max-width: 900px) {
+  .event-card.has-image { grid-template-columns: 88px 1fr; }
+  .event-card.has-image .event-image { grid-column: 1 / -1; grid-row: 1; }
+}
+@media (max-width: 560px) {
+  .event-card, .event-card.has-image { grid-template-columns: 1fr; gap: 16px; padding: 22px; }
+  .event-date { flex-direction: row; gap: 8px; justify-content: center; padding: 8px 12px; align-self: start; justify-self: start; }
+  .event-date .ed-day { font-size: 20px; }
+  .event-foot .btn { width: 100%; justify-content: center; order: 1; }
+}

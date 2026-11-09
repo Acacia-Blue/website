@@ -1,0 +1,8 @@
+{
+  "images": {
+    "sizes": [640, 960, 1280],
+    "remotePatterns": [{ "protocol": "https", "hostname": "images.humanitix.com" }],
+    "formats": ["image/webp"],
+    "minimumCacheTTL": 86400
+  }
+}
