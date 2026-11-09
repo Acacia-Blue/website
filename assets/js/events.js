@@ -63,6 +63,16 @@
     var foot = document.createElement('div');
     foot.className = 'event-foot';
 
+    var closed = e.soldOut || e.salesPaused;
+    var a = document.createElement('a');
+    a.className = 'btn ' + (closed ? 'btn-secondary' : 'btn-primary');
+    a.href = e.url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = closed ? 'View event' : 'Get tickets';
+    a.setAttribute('aria-label', a.textContent + ': ' + e.name + ' (opens Humanitix)');
+    foot.appendChild(a);
+
     var price = priceText(e.price);
     if (price) {
       var pr = document.createElement('span');
@@ -77,7 +87,6 @@
       foot.appendChild(md);
     }
 
-    var closed = e.soldOut || e.salesPaused;
     if (closed) {
       var badge = document.createElement('span');
       badge.className = 'event-badge';
@@ -85,28 +94,31 @@
       foot.appendChild(badge);
     }
 
-    var a = document.createElement('a');
-    a.className = 'btn ' + (closed ? 'btn-secondary' : 'btn-primary');
-    a.href = e.url;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.textContent = closed ? 'View event' : 'Get tickets';
-    a.setAttribute('aria-label', a.textContent + ': ' + e.name + ' (opens Humanitix)');
-    foot.appendChild(a);
-
     body.appendChild(foot);
     el.appendChild(body);
 
     if (e.image) {
       var img = document.createElement('img');
       img.className = 'event-image';
-      img.src = e.image;
+      setImageSources(img, e.image);
       img.alt = '';
       img.loading = 'lazy';
       el.appendChild(img);
       el.classList.add('has-image');
     }
     return el;
+  }
+
+  // Humanitix serves full-size originals (often 3000px+, several MB). Ask Vercel's
+  // image service for a copy sized to the card instead; fall back to the original
+  // if that service isn't available (e.g. when running locally).
+  function setImageSources(img, url) {
+    if (!/^https:\/\/images\.humanitix\.com\//.test(url)) { img.src = url; return; }
+    var v = function (w) { return '/_vercel/image?url=' + encodeURIComponent(url) + '&w=' + w + '&q=80'; };
+    img.srcset = v(640) + ' 640w, ' + v(960) + ' 960w, ' + v(1280) + ' 1280w';
+    img.sizes = '(max-width: 560px) calc(100vw - 86px), (max-width: 900px) calc(100vw - 112px), 360px';
+    img.src = v(960);
+    img.onerror = function () { img.onerror = null; img.removeAttribute('srcset'); img.src = url; };
   }
 
   function fmt(d, tz, opts) {

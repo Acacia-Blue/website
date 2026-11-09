@@ -473,7 +473,7 @@ img { max-width: 100%; display: block; }
   background: var(--paper-raised); border: 1px solid var(--card-line); border-radius: 12px;
   padding: 28px; box-shadow: var(--shadow);
 }
-.event-card.has-image { grid-template-columns: 88px 1fr 240px; }
+.event-card.has-image { grid-template-columns: 88px 1fr 360px; }
 .event-date {
   display: flex; flex-direction: column; align-items: center; padding: 12px 0 14px;
   border-radius: 10px; background: var(--navy); color: var(--paper); text-align: center;
@@ -484,12 +484,12 @@ img { max-width: 100%; display: block; }
 .event-name { font-family: var(--display); font-weight: 400; font-size: 24px; line-height: 1.25; margin: 0 0 6px; color: var(--navy); }
 .event-meta { font-size: 14px; color: var(--ink-faint); margin: 0 0 12px; white-space: pre-wrap; }
 .event-summary { font-size: 15px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 18px; max-width: 64ch; }
-.event-foot { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
-.event-foot .btn { margin-left: auto; }
+.event-foot { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 18px; }
 .event-price { font-size: 14px; font-weight: 600; color: var(--navy); }
 .event-more { font-size: 13px; color: var(--ink-faint); }
 .event-badge { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; background: #F3E8D2; color: #A3762B; }
-.event-image { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px; border: 1px solid var(--card-line); }
+/* Humanitix event images are 2:1; keep that shape so nothing is cropped. */
+.event-image { width: 100%; aspect-ratio: 2/1; object-fit: cover; border-radius: 8px; border: 1px solid var(--card-line); background: var(--paper); }
 .events-empty { max-width: 62ch; }
 .events-empty h2 { font-weight: 400; font-size: 26px; margin: 0 0 10px; }
 .events-empty p { font-size: 16px; line-height: 1.65; color: var(--ink-soft); margin: 0; }
@@ -502,5 +502,5 @@ img { max-width: 100%; display: block; }
   .event-card, .event-card.has-image { grid-template-columns: 1fr; gap: 16px; padding: 22px; }
   .event-date { flex-direction: row; gap: 8px; justify-content: center; padding: 8px 12px; align-self: start; justify-self: start; }
   .event-date .ed-day { font-size: 20px; }
-  .event-foot .btn { margin-left: 0; width: 100%; justify-content: center; }
+  .event-foot .btn { width: 100%; justify-content: center; order: 1; }
 }
