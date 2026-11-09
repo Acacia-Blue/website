@@ -29,33 +29,6 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  // TEMPORARY diagnostic, previews only. Remove before merging.
-  if (req.query && req.query.debug === '1' && process.env.VERCEL_ENV !== 'production') {
-    res.setHeader('Cache-Control', 'no-store');
-    const out = {};
-    for (const future of [true, false]) {
-      try {
-        const r = await fetch(`${HUMANITIX_URL}?page=1&pageSize=100${future ? '&inFutureOnly=true' : ''}`, {
-          headers: { 'x-api-key': apiKey, accept: 'application/json' },
-        });
-        const body = await r.json();
-        out[future ? 'inFutureOnly' : 'all'] = {
-          status: r.status,
-          total: body.total,
-          error: body.code || body.message || undefined,
-          events: (body.events || []).map((e) => ({
-            name: e.name, published: e.published, public: e.public, isArchived: e.isArchived,
-            startDate: e.startDate, endDate: e.endDate, location: e.location,
-            dates: (e.dates || []).map((d) => ({ start: d.startDate, end: d.endDate, deleted: d.deleted, disabled: d.disabled })),
-          })),
-        };
-      } catch (err) {
-        out[future ? 'inFutureOnly' : 'all'] = { fetchError: err.message };
-      }
-    }
-    return res.status(200).json(out);
-  }
-
   try {
     const raw = await fetchAllUpcoming(apiKey);
     const now = Date.now();
