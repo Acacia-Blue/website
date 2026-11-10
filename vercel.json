@@ -1,4 +1,10 @@
 {
+  "headers": [
+    {
+      "source": "/knowledge-hub-login.html",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ],
   "images": {
     "sizes": [640, 960, 1280],
     "remotePatterns": [{ "protocol": "https", "hostname": "images.humanitix.com" }],
